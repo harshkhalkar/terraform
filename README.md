@@ -329,7 +329,7 @@ These are your primary infrastructure definition files written in HCL (HashiCorp
 - `.terraform/` - Stores downloaded providers and modules.
 - `.terraform.lock.hcl` - Dependency lock file to ensure consistent provider versions.
 
-<h2 align+"center">Lets Launch Our First EC2 Instance</h2>
+<h2 align="center">Lets Launch Our First EC2 Instance</h2>
 
 - Make A Directory
   ```bash
