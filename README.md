@@ -328,3 +328,62 @@ These are your primary infrastructure definition files written in HCL (HashiCorp
 
 - `.terraform/` - Stores downloaded providers and modules.
 - `.terraform.lock.hcl` - Dependency lock file to ensure consistent provider versions.
+
+<h2 align+"center">Lets Launch Our First EC2 Instance</h2>
+
+- Make A Directory
+  ```bash
+  mkdir /terraform
+  ```
+- Initialize It
+  ```bash
+  terraform init
+  ```
+- Make a file `main.tf`
+  ```bash
+  terraform {
+  required_providers {
+    aws = {
+        source  = "hashicorp/aws"
+        version = "~> 6.0"
+      }
+    }
+  }
+  
+  # Configure the AWS Provider
+  provider "aws" {
+    region     = "us-east-1"
+    profile = "default"
+  }
+  
+  # launch instance
+  resource "aws_instance" "ec2-1" {
+    ami           = "ami-020cba7c55df1f615"
+    instance_type = "t2.micro"
+    tags = {
+      Name = "tf-instance"
+    }
+  }
+  ```
+  
+- Validate & Format
+  ```bash
+  terraform validate
+  terraform fmt
+  ```
+  
+- Plan File
+  ```bash
+  kubectl plan
+  ```
+  
+- Generate an Execution Plan
+  ```bash
+  kubectl apply
+  # terraform apply --auto-approve  ## Wont prompt for confirmation
+  ```
+  
+- To Destroy
+  ```bash
+  terraform destroy
+  ```
