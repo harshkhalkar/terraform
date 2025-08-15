@@ -372,12 +372,12 @@ These are your primary infrastructure definition files written in HCL (HashiCorp
   terraform fmt
   ```
   
-- Plan File
+- Generate an Execution Plan
   ```bash
   terraform plan
   ```
   
-- Generate an Execution Plan
+- Apply the File
   ```bash
   terraform apply
   # terraform apply --auto-approve  ## Wont prompt for confirmation
