@@ -374,12 +374,12 @@ These are your primary infrastructure definition files written in HCL (HashiCorp
   
 - Plan File
   ```bash
-  kubectl plan
+  terraform plan
   ```
   
 - Generate an Execution Plan
   ```bash
-  kubectl apply
+  terraform apply
   # terraform apply --auto-approve  ## Wont prompt for confirmation
   ```
   
